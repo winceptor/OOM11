@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Factory">
+  <ClassDiagramComponents>
+    <Class name="Mainclass" package="" visibility="public" xPosition="485.0" yPosition="12.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Dog" package="" visibility="public" xPosition="1082.0" yPosition="246.0">
+      <Methods>
+        <Method name="bark" returnType="void" visibility="public"/>
+        <Method name="eat" returnType="void" visibility="public"/>
+        <Method name="walk" returnType="void" visibility="public"/>
+        <Method name="sleep" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="SmallDog" package="" visibility="public" xPosition="838.0" yPosition="246.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BigDog" package="" visibility="public" xPosition="838.0" yPosition="507.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="NormalDog" package="" visibility="public" xPosition="838.0" yPosition="374.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="AbstractFactory" package="" visibility="public" isAbstract="true" xPosition="494.0" yPosition="177.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createDog" returnType="Dog" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="createCat" returnType="Cat" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DogFactory" package="" visibility="public" xPosition="602.0" yPosition="364.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createDog" returnType="Dog" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CatFactory" package="" visibility="public" xPosition="390.0" yPosition="364.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createCat" returnType="Cat" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HouseCat" package="" visibility="public" xPosition="206.0" yPosition="246.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="WildCat" package="" visibility="public" xPosition="206.0" yPosition="507.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Cat" package="" visibility="public" xPosition="7.0" yPosition="246.0">
+      <Methods>
+        <Method name="meow" returnType="void" visibility="public"/>
+        <Method name="eat" returnType="void" visibility="public"/>
+        <Method name="sleep" returnType="void" visibility="public"/>
+        <Method name="walk" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="Mainclass" target="AbstractFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="CatFactory" target="AbstractFactory"/>
+    <UseRelation name="" source="DogFactory" target="BigDog" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <UseRelation name="" source="Mainclass" target="Dog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Mainclass" target="Cat" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="CatFactory" target="WildCat" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="HouseCat" target="Cat"/>
+    <UseRelation name="" source="DogFactory" target="SmallDog" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BigDog" target="Dog"/>
+    <UseRelation name="" source="CatFactory" target="HouseCat" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="WildCat" target="Cat"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="SmallDog" target="Dog"/>
+    <IsRelation name="is" source="DogFactory" target="AbstractFactory"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NormalDog" target="Dog"/>
+    <UseRelation name="" source="DogFactory" target="NormalDog" sourceCardinality="1..1" targetCardinality="0..*"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
